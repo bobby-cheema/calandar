@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+</head>
+
+<body>
+    <header class="jumbotron">
+        <h1 class="display-3">Work Day Scheduler</h1>
+        <p class="lead">A simple calendar app for scheduling your work day</p>
+        <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container">
+        <!-- HR 9  -->
+        <ul class="list-group mt-5">
+            <li class="row justify-content-between">
+                <div class="col-1 bg-info list-group-item">9 AM</div>
+                <div id="9" class="col list-group-item-action list-group-item"></div>
+                <div class="col-sm-1 bg-primary list-group-item">
+                    <i id="9btn" style="font-size: 24px; color: white" class="fas">&#xf187;</i
+            >
+          </div>
+        </li>
+        <!-- 10 hr  -->
+        <li class="row justify-content-between">
+          <div class="col-1 bg-info list-group-item">10 AM</div>
+          <div id="10" class="col list-group-item-action list-group-item"></div>
+          <div class="col-sm-1 bg-primary list-group-item">
+            <i id="10btn" style="font-size: 24px; color: white" class="fas"
+              >&#xf187;</i
+            >
+          </div>
+        </li>
+        <!-- 11Hr -->
+        <li class="row justify-content-between">
+          <div class="col-1 bg-info list-group-item">11 AM</div>
+          <div id="11" class="col list-group-item-action list-group-item"></div>
+          <div class="col-sm-1 bg-primary list-group-item">
+            <i id="11btn" style="font-size: 24px; color: white" class="fas"
+              >&#xf187;</i
+            >
+          </div>
+        </li>
+        <!-- 12HR -->
+        <li class="row justify-content-between">
+          <div class="col-1 bg-info list-group-item">12 AM</div>
+          <div id="12" class="col list-group-item-action list-group-item"></div>
+          <div class="col-sm-1 bg-primary list-group-item">
+            <i id="12btn" style="font-size: 24px; color: white" class="fas"
+              >&#xf187;</i
+            >
+          </div>
+        </li>
+        <!-- 13 hr -->
+        <li class="row justify-content-between">
+          <div class="col-1 bg-info list-group-item">1 PM</div>
+          <div id="13" class="col list-group-item-action list-group-item"></div>
+          <div class="col-sm-1 bg-primary list-group-item">
+            <i id="13btn" style="font-size: 24px; color: white" class="fas"
+              >&#xf187;</i >
+          </div>
+        </li>
+        <!-- 14 HR -->
+        <li class="row justify-content-between">
+          <div class="col-1 bg-info list-group-item">2 PM</div>
+          <div id="14" class="col list-group-item-action list-group-item"></div>
+          <div class="col-sm-1 bg-primary list-group-item">
+            <i id="14btn" style="font-size: 24px; color: white" class="fas"
+              >&#xf187;</i
+            >
+          </div>
+        </li>
+        <!-- HR 15  -->
+        <li class="row justify-content-between">
+          <div class="col-1 bg-info list-group-item">3 PM</div>
+          <div id="15" class="col list-group-item-action list-group-item"></div>
+          <div class="col-sm-1 bg-primary list-group-item">
+            <i id="15btn" style="font-size: 24px; color: white" class="fas"
+              >&#xf187;</i
+            >
+          </div>
+        </li>
+        <!-- HR 16 -->
+        <li class="row justify-content-between">
+          <div class="col-1 bg-info list-group-item">4 PM</div>
+          <div id="16" class="col list-group-item-action list-group-item"></div>
+          <div class="col-sm-1 bg-primary list-group-item">
+            <i id="16btn" style="font-size: 24px; color: white" class="fas"
+              >&#xf187;</i
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+    ></script>
+    <script defer src="script.js"></script>
+  </body>
+</html>
+
+<!-- 
+<ul class="list-group mt-5">
+  <li id="9" class="list-group-item list-group-item-warning">9 Am</li>
+  <li id="10" class="list-group-item list-group-item-action">
+    10 Am <span id="btn10">Add </span>
+  </li>
+  <li id="11" class="list-group-item list-group-item-action">11 AM</li>
+  <li class="list-group-item list-group-item-action">12 PM</li>
+  <li class="list-group-item list-group-item-action">1 PM</li>
+</ul>
+</div> -->
