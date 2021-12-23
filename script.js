@@ -28,7 +28,7 @@ const btn16 = $("#16btn");
 let getid = 1;
 const el = $("li:eq(2)");
 const mybtn = $("ul:first").children();
-console.log(el);
+
 //el.addClass("active")
 //mybtn.addClass("active");
 let editing;
@@ -38,11 +38,11 @@ const runsave = (event) => {
 };
 
 const now = new Date();
-const HR = now.getHours()
-    //HR = 9;
+const HR = now.getHours();
+//HR = 11;
 hours.map((e) => {
     const H = e.substr(2);
-    console.log(H);
+
     const ELM = eval(e);
     if (HR == H) {
         ELM.addClass("bg-danger");
@@ -63,24 +63,33 @@ hours.map((e) => {
 });
 
 const editevent = (id, btn) => {
-    editing = true;
-    const EL = eval(id);
-    const savebtn = eval(btn);
-    savebtn.on("click", () => {
-        // localStorage.setItem("obj.time", obj.events)
-        const value = EL.find("input").val();
-        // const time = id.substr(2)
-        console.log(`value is ${value} id is ${id}`);
-        localStorage.setItem(id, value);
-        EL.removeClass("active");
-        EL.find("input").remove();
-        editing = false;
-    });
+    // do not edit if time has already passed
+    const H = id.substr(2);
 
-    EL.addClass("active");
-    EL.append(
-        '<input input-group-sm  class="bg-primary text-light form-control " type="text" value=" "> '
-    );
+    if (H > HR) {
+        editing = true;
+        const EL = eval(id);
+        const savebtn = eval(btn);
+        savebtn.on("click", () => {
+            // localStorage.setItem("obj.time", obj.events)
+            const value = EL.find("input").val();
+            // const time =
+
+            localStorage.setItem(id, value);
+            EL.removeClass("active");
+            EL.find("input").remove();
+            editing = false;
+            location.reload()
+        });
+
+        EL.addClass("active");
+        EL.append(
+            '<input autofocus input-group-sm  class="bg-primary text-light form-control " type="text" value=" "> '
+        );
+    } else {
+        alert(" This time has already passed ");
+    }
+
     // const myinput = $(EL).children().val();
 
     // console.log("myinput", myinput);
